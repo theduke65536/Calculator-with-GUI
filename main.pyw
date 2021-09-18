@@ -136,6 +136,9 @@ def decimal():
     number_bar.config(text=text)
 
 
+def negative():
+    text = number_bar_append('-')
+    number_bar.config(text=text)
 
 
 def equals():
@@ -151,7 +154,6 @@ def equals():
         if i == '-':
 
             if expression[expression.index(i)+1] == ' ':
-
                 num1 = float(expression[:expression.index('-')])
                 num2 = float(expression[expression.index('-')+1:])
                 dif = sub(num1,num2)
@@ -204,6 +206,7 @@ button_multiply = Button(frame, command=type_mult, text='x',font=('Arial', 10), 
 button_delete = Button(frame, command=delete, text='⌫', font=('Arial', 10), height=4, width=9, bg='grey')
 button_equals = Button(frame, command=equals, text='=',font=('Arial', 10), height=4, width=9, bg='grey')
 button_decimal = Button(frame, command=decimal, text='.',font=('Arial', 10), height=4, width=9, bg='grey')
+button_negative = Button(frame, command=negative, text='+/-',font=('Arial', 10), height=4, width=9, bg='grey')
 
 number_bar.pack(side=TOP)
 
@@ -226,5 +229,6 @@ button_divide.grid(row=1,column=4)
 button_equals.grid(row=4,column=4)
 button_delete.grid(row=0, column=1)
 button_decimal.grid(row=4,column=2)
+button_negative.grid(row=0,column=2)
 
 window.mainloop()
